@@ -33,16 +33,16 @@
 
 
 .card-container {
-  width: 550px;
-  height: 650px;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
-  align-items: center
+  justify-content: left;
+  align-items: initial;
+  flex-wrap: wrap
 }
 
 
 .card {
-  width: 50px;
-  height: 80px;
-  border: 2px solid yellow
+  width: 55px;
+  height: 10px;
+  border: 2px solid purple
 }
