@@ -1,48 +1,83 @@
-.App {
+.blackjack-header {
   text-align: center;
+  margin: 0 auto;
+  font-size: 325%;
+  font-weight: 135%;
+  letter-spacing: 0.4em;
+  color: red;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-.card-container {
+.blackjack-container {
   width: 100%;
+  height: 850px;
   display: flex;
-  justify-content: left;
-  align-items: initial;
-  flex-wrap: wrap
+  align-items: center;
+  flex-direction: column
 }
-
 
 .card {
   width: 55px;
   height: 10px;
-  border: 2px solid purple
+}
+
+.dealer-container {
+  align-self: center;
+  width: 70%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid red;
+  background-color: green;
+  margin: 5px
+}
+
+.info {
+  width: 70%;
+  height: 20%;
+  border: 3px solid black;
+  background-color: white;
+  align-self: center;
+  margin: 5px
+}
+
+.info-values-div {
+  margin: 0;
+  display: flex;
+  width: 100%;
+  height: 100%
+}
+
+.card-info-div {
+  display: flex;
+  flex-direction: column;
+  width: 27.5%;
+  align-items: center;
+  justify-content: center;
+  background-color: pink
+}
+
+.betting-div {
+  display: flex;
+  width: 70%;
+  height: 100%
+}
+
+.bet-info {
+  width: 37.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  align-self: center;
+  flex-direction: column;
+  background-color: darkcyan;
+  height: 100%;
+}
+
+.user-container {
+  width: 70%;
+  height: 20%;
+  border: 1px solid red;
+  background-color: green;
+  align-self: center;
+  margin: 5px
 }

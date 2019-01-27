@@ -3,7 +3,7 @@ import React from 'react'
 export const Card = ({ card }) => {
     return (
         <React.Fragment>
-            <img src={card.image} alt='card' />
+            <img width='170' height='200' src={card.image} alt='card' />
         </React.Fragment>
     )
 }
