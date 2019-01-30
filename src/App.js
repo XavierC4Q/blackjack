@@ -76,6 +76,7 @@ class App extends Component {
 
   getCardValues = (player, ...cards) => {
     let getCardValues = Object.values(cards)
+
     let findValue = getCardValues.reduce((total, c) => {
       if(c.value === 'ACE' && player !== 'DEALER'){
         return total += this.handleAce()
