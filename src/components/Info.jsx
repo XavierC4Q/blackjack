@@ -6,21 +6,33 @@ export default class Info extends PureComponent {
   state = {
     money: 3000,
     bet: 0,
-    betting: true
+    betting: true,
+    "25": 0,
+    "50": 0,
+    "100": 0,
+    "250": 0,
+    "500": 0
   };
 
   addToBet = event => {
+    const { bet, money } = this.state
     let value = event.target.id;
-    this.setState(prevState => ({ bet: prevState.bet + Number(value) }));
+    if(bet + Number(value) <= money){
+      this.setState(prevState => ({
+        [value]: prevState[value] + 1, 
+        bet: prevState.bet + Number(value)}
+      ))
+    }
   };
 
   placeBet = () => {
     this.setState({ betting: false });
   };
 
+  removeFromBet = event => {};
+
   render() {
     const { remaining, handValue, dealerValue } = this.props;
-    const { bet, betting, money } = this.state;
     return (
       <div className="info-values-div">
         <div className="card-info-div">
@@ -28,12 +40,12 @@ export default class Info extends PureComponent {
           <InfoValue label="Your Hand" value={handValue} />
           <InfoValue label="Dealer Hand" value={dealerValue} />
         </div>
-        {betting && (
+        {this.state.betting && (
           <Betting
+            {...this.state}
             addToBet={this.addToBet}
+            removeFromBet={this.removeFromBet}
             placeBet={this.placeBet}
-            bet={bet}
-            money={money}
           />
         )}
       </div>

@@ -87,11 +87,12 @@
   margin: 3.5px;
   display: flex;
   text-align: center;
-  background-color: pink;
+  background-color:gold;
   align-self: flex-start;
   align-items: center;
   justify-content: center
 }
+
 
 .user-container {
   width: 70%;

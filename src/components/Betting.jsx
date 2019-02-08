@@ -3,16 +3,29 @@ import InfoValue from "./InfoValue";
 
 const BetDiv = ({ addToBet, id, ...props }) => {
   return(
-    <div className='bet' id={id} onClick={event => addToBet(event)}>${id}</div>
+    <div 
+    className='bet' 
+    id={id} 
+    onClick={event => addToBet(event)}>${id}</div>
   )
 }
 
-export const Betting = ({ money, bet, addToBet, removeFromBet, placeBet }) => {
+const RemoveDiv = ({ removeFromBet, count, id, ...props }) => {
+  return(
+    <div 
+    className='remove-bet'
+    id={id} 
+    onClick={event => removeFromBet(event)}>{`Remove $${id}: ${count}x`}</div>
+  )
+}
+
+export const Betting = ({ addToBet, removeFromBet, placeBet, ...props }) => {
+
   return (
     <div className="betting-div">
       <div className="bet-info">
-        <InfoValue label="Money Left" value={money} />
-        <InfoValue label="Your Bet" value={bet} />
+        <InfoValue label="Money Left" value={`$${props.money}`} />
+        <InfoValue label="Your Bet" value={`$${props.bet}`} />
       </div>
       <div className='betting-selections'>
       <BetDiv id='25' addToBet={addToBet}/>
@@ -23,6 +36,12 @@ export const Betting = ({ money, bet, addToBet, removeFromBet, placeBet }) => {
       <div>
         <button onClick={() => placeBet()}>Place Bet</button>
       </div>
+      {props['25'] !== 0 && 
+        <RemoveDiv 
+        removeFromBet={removeFromBet} 
+        count={props['25']}
+        id='25' 
+        />}
       </div>
     </div>
   );
